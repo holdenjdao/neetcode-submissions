@@ -1,0 +1,20 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int> indices;
+
+        unordered_map<int, int> seen;
+
+        for (int i { }; i < nums.size(); ++i) {
+            int difference = target - nums[i];
+            
+            if (seen.contains(difference)) {
+                return {seen[difference], i};
+            }
+
+            seen.insert({nums[i], i});
+        }
+
+        return indices;
+    }
+};
